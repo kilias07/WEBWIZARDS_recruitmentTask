@@ -1,0 +1,29 @@
+// RESET
+@import "./partials/utils/reset";
+
+// SWIPER
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+
+// TYPOGRAPHY
+@import "./partials/utils/typography";
+
+// VARIABLES
+@import "./partials/utils/variables";
+
+// MIXINS
+@import "./partials/utils/mixins";
+
+// BASE
+@import "./partials/nav";
+@import "./partials/hero";
+@import "./partials/about";
+@import "./partials/gallery";
+@import "./partials/contact";
+@import "./partials/footer";
+
+*,
+html {
+  scroll-behavior: smooth !important;
+}

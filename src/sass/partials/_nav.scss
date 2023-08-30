@@ -1,0 +1,197 @@
+.nav {
+  width: 100%;
+  height: 100px;
+  * {
+    text-decoration: none;
+  }
+
+  &__wrapper {
+    position: fixed;
+    background-color: $white;
+    inset: 0 0 auto 0;
+    z-index: 999;
+  }
+
+  &__wrapper::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: $lightRed;
+  }
+  &__items {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    @extend .container;
+    justify-content: space-between;
+    @include md {
+      justify-content: flex-start;
+    }
+  }
+  &__logo {
+    margin-left: 5px;
+    @include md {
+      margin-left: 0;
+    }
+  }
+
+  &__container {
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    inset: -200px 0 auto 0;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+
+    @include md {
+      z-index: 1;
+      position: static;
+      flex-direction: row;
+      gap: 0;
+      padding: 0;
+      inset: auto;
+      height: auto;
+      opacity: 1;
+      flex-grow: 1;
+    }
+  }
+  &__container.open {
+    top: 100px;
+    opacity: 1;
+  }
+
+  &__links {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    background-color: $white;
+
+    @include md {
+      padding-top: 0;
+      inset: auto;
+      gap: 0;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      margin: 0 16px 0 16px;
+      flex-grow: 1;
+      justify-content: space-around;
+      position: static;
+    }
+    li,
+    li > button {
+      text-transform: uppercase;
+      letter-spacing: 4.8px;
+      font-size: 12px;
+      font-weight: light;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+    li > a,
+    li > button {
+      color: $lightGray;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $lightRed;
+      }
+      @include lg {
+        padding: 12px 24px;
+        box-shadow: 0;
+
+        &:hover {
+          box-shadow: 0px 6px 10px 1px $pink;
+          border-radius: 100px;
+        }
+      }
+    }
+    @include lg {
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__social {
+    padding: 24px 0;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+
+    @include md {
+      position: static;
+      align-items: center;
+      width: auto;
+      padding: 0;
+    }
+    li {
+      height: 28px;
+    }
+  }
+}
+
+#nav__hamburger {
+  display: block;
+  scale: 0.7;
+  width: 60px;
+  height: 40px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  @include md {
+    display: none;
+  }
+
+  & > span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+    transform-origin: left center;
+  }
+  & > span:nth-child(1) {
+    top: 0px;
+  }
+  & > span:nth-child(2) {
+    top: 18px;
+  }
+  & > span:nth-child(3) {
+    top: 36px;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+
+  &.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+}

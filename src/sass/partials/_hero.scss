@@ -1,0 +1,12 @@
+.hero__section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  picture {
+    img {
+      width: 100%;
+      max-height: 813px;
+      object-fit: cover;
+    }
+  }
+}

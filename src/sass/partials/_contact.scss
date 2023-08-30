@@ -1,0 +1,98 @@
+.contact__form {
+  display: none;
+  .contact__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+  }
+  .contact__form__container {
+    padding: 20px;
+    z-index: 100;
+    background-color: $white;
+    position: fixed;
+    inset: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 550px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  svg {
+    fill: $lightGray;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+  form {
+    margin: 30px auto;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  ::placeholder {
+    color: $lightGray;
+    padding: 10px;
+  }
+  label {
+    text-transform: uppercase;
+    color: $black;
+    font-weight: 300;
+    margin-bottom: 5px;
+    letter-spacing: 4.8px;
+    font-size: 12px;
+  }
+  * span {
+    margin-left: 5px;
+    color: red;
+  }
+  input {
+    display: block;
+    margin-top: 5px;
+    width: 260px;
+    height: 42px;
+    border-radius: 6px;
+    border: 1px solid $lightGray;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+  }
+
+  .form__checkbox {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    p {
+      flex-grow: 1;
+      padding: 0 4px;
+      font-size: 12px;
+      color: $black;
+      width: 139px;
+    }
+  }
+  button[type="submit"] {
+    width: 100%;
+    background-color: $lightRed;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  .form__error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}

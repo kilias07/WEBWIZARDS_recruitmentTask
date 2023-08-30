@@ -1,0 +1,64 @@
+.gallery {
+  h2 {
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 19.2px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+  h2::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    top: 70px;
+    height: 3px;
+    background-color: $lightRed;
+  }
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.swiper {
+  width: 90%;
+}
+.swiper-wrapper {
+  @include md {
+    height: 900px;
+  }
+  height: fit-content;
+}
+
+.swiper-slide {
+  object-fit: contain;
+  height: 90%;
+  width: 500px;
+}
+
+.swiper-indicator-left {
+  position: absolute;
+  left: 0px;
+  top: 40%;
+  z-index: 999;
+  cursor: pointer;
+  fill: $lightRed;
+}
+
+.swiper-indicator-right {
+  rotate: 180deg;
+  position: absolute;
+  right: 0px;
+  top: 40%;
+  z-index: 999;
+  cursor: pointer;
+  fill: $lightRed;
+}
+
+.swiper-indicator-left.swiper-indicator-disabled,
+.swiper-indicator-right.swiper-indicator-disabled {
+  fill: $lightGray;
+}
