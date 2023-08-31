@@ -62,3 +62,14 @@
 .swiper-indicator-right.swiper-indicator-disabled {
   fill: $lightGray;
 }
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: $lightRed !important;
+  scale: 2;
+}
+
+.swiper-pagination-bullet {
+  background-color: black !important;
+  scale: 1.5;
+  margin: 0 6px !important;
+}

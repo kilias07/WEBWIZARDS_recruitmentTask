@@ -1,4 +1,3 @@
-import { log } from "console";
 import { domReady } from "../helper";
 
 const form = document.createElement("div");
