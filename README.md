@@ -26,4 +26,4 @@
 
 ## Demo
 
-demo is avalible on
+demo is avalible on https://webwizards-recruitment-task.vercel.app/
